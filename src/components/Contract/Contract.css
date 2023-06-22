@@ -1,0 +1,25 @@
+.contract-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+  }
+  
+  .contract-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .contract-card h3 {
+    margin-top: 0;
+  }
+  
+  .contract-card p {
+    margin: 10px 0;
+  }
+  
+  .contract-card button {
+    margin-top: 10px;
+  }
+  
