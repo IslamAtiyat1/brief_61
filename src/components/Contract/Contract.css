@@ -1,25 +1,43 @@
 .contract-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 20px;
-  }
-  
-  .contract-card {
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-  }
-  
-  .contract-card h3 {
-    margin-top: 0;
-  }
-  
-  .contract-card p {
-    margin: 10px 0;
-  }
-  
-  .contract-card button {
-    margin-top: 10px;
-  }
-  
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+.contract-card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.contract-card h3 {
+  margin-top: 0;
+}
+
+.contract-card p {
+  margin: 10px 0;
+}
+
+.contract-card button {
+  margin-top: 10px;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 500px;
+  padding: 20px;
+  background-color: #fff;
+}

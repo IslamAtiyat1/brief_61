@@ -1,0 +1,87 @@
+.bodylog1 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 90vh;
+	margin-top: 20px;
+}
+
+.bodylog2 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 70vh;
+	margin-top: 20px;
+	/* background-image: url('../../assets/img/canva-office-desk-table-with-computer\,-supplies-MAEV6jGl3DA.jpg'); */
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.containerlog {
+	max-width: 400px;
+	padding: 40px;
+	background-color: #ffffff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
+}
+
+.h1log {
+	text-align: center;
+	color: #333333;
+	font-size: 24px;
+	margin-bottom: 20px;
+}
+
+.myform label {
+	display: block;
+	color: #555555;
+	font-size: 14px;
+	margin-bottom: 5px;
+}
+
+.myform input {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 15px;
+	border: 1px solid #dddddd;
+	border-radius: 4px;
+	font-size: 14px;
+}
+
+.errors {
+	color: red;
+	font-size: 12px;
+	margin-top: 5px;
+}
+
+.btn-primary {
+	display: block;
+	width: 100%;
+	padding: 12px;
+	background-color: #007bff;
+	color: #ffffff;
+	border: none;
+	border-radius: 4px;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.btn-primary:hover {
+	background-color: #0069d9;
+}
+
+.text-log {
+	text-align: center;
+	color: #555555;
+	font-size: 14px;
+	margin-top: 15px;
+}
+
+.loginhere-link {
+	color: #007bff;
+	text-decoration: none;
+}
+
+.loginhere-link:hover {
+	text-decoration: underline;
+}

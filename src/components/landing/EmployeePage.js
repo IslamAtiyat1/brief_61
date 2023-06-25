@@ -3,11 +3,8 @@ import team1 from '../../assets/img/team-1.jpg';
 import team2 from '../../assets/img/team-2.jpg';
 import team3 from '../../assets/img/team-3.jpg';
 import team4 from '../../assets/img/team-4.jpg';
-// import { Link } from 'react-router-dom';
-
-
-//  import './styles/style.css';
 import './Employee.css';
+
 const EmployeePage = () => {
   const [showPopup, setShowPopup] = useState(false); // State to manage popup visibility
 
@@ -71,9 +68,6 @@ const EmployeePage = () => {
       <button className="close-modal" onClick={togglePopup}>
         CLOSE
       </button>
-      <button className="close-modal" onClick={togglePopup}>
-      {/* <Link to="/contract">Go to Contract Page</Link> */}
-      </button>
     </div>
   </div>
 )}
@@ -81,7 +75,7 @@ const EmployeePage = () => {
       
      
         <div>
-   
+      <h1>Employee Page</h1>
 
       <div className="container-fluid pt-5">
         <div className="container">
