@@ -9,7 +9,7 @@ const Navbar = () => {
 
   function logout() {
     sessionStorage.clear();
-    navigate("/home");
+    navigate("/");
 
   }
   return (
@@ -32,10 +32,10 @@ const Navbar = () => {
                 </Link>
               </li>
 
-              {sessionStorage.getItem("username") !== null ? (
+              {sessionStorage.getItem("username") !== null  ? (
                 <>
                   <li>
-                    <Link className="nav-item nav-link" to="/ContractPage">
+                    <Link className="nav-item nav-link" to="/ContractType">
                       Contarcts
                     </Link>
                   </li>
@@ -52,7 +52,7 @@ const Navbar = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link className="logout nav-item nav-link" onClick={logout}>
+                    <Link className="logout nav-item nav-link" to="/" onClick={logout}>
                       Logout
                     </Link>
                   </li>

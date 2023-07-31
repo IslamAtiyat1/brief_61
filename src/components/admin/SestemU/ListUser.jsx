@@ -62,10 +62,10 @@ export default function ListUser() {
 
               <td>
                 <Link to={`/Edit/${user.id}/User`} style={{ marginRight: "10px" }}>
-                  <button style={{ background: "grey", color: "white"  ,  borderRadius:"5px"   }}>Edit</button>
+                  <button style={{ background: "black", color: "white"  ,  borderRadius:"5px"   }}>Edit</button>
                 </Link>
 
-                <button onClick={() => deleteUser(user.id)} style={{ background: "red", color: "white"  , borderRadius:"5px"    }}>
+                <button onClick={() => deleteUser(user.id)} style={{ background: "gray", color: "white"  , borderRadius:"5px"    }}>
                   Delete
                 </button>
               </td>

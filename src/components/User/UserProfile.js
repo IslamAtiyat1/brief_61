@@ -4,7 +4,7 @@ import axios from "axios";
 import UserNav from './UserNav';
 import Navbar from "../landing/Navbar";
 import Footer from "../landing/Footer";
-
+import img from '../../assets/img/download-_3_.webp';
 export default function UserProfile() {
   const [user, setUser] = useState({});
   const [contracts, setContracts] = useState([]);
@@ -29,7 +29,23 @@ export default function UserProfile() {
       setContracts(response.data);
     });
   }
+  const buttonStyle = {
 
+    fontSize: '14px',
+    padding: '4px 15px',
+    borderRadius: '4px',
+    fontWeight: 'bold',
+    margin: 'auto',
+    border: 'solid 2px black',
+    height: '50px',
+    width: '120px',
+    // text-align:'center',
+
+  };
+  const cardHeaderClass={
+    height: '50px',
+    width: '120px',
+  }
   return (
     <>
     <Navbar/>
@@ -42,7 +58,7 @@ export default function UserProfile() {
             <div className="card mb-4">
               <div className="card-body text-center">
                 <img
-                  src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+                  src={img}
                   alt="avatar"
                   className="rounded-circle"
                   style={{ width: '150px' }}
@@ -94,6 +110,13 @@ export default function UserProfile() {
               </div>
             </div>
           </div>
+          <div className="col-md-3">
+              <button className="btn btn-light btn-sm center"  >
+              <Link to="/ContractPage" className="btn btn-primary ">
+                  add contract
+                  </Link>
+              </button>
+            </div>
         </div>
         <div className="row">
   {contracts.map((contract, index) => {

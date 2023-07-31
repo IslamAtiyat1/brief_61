@@ -15,8 +15,8 @@ const PopularClasses = () => {
               <div className="card border-0 bg-light shadow-sm pb-2 text-center">
                 <img className="card-img-top mb-2" src="img/class-2.jpg" alt="" />
                 <div className="card-body">
-                  <h4 className="card-title">Contract with us</h4>
-                  <p className="card-text">Justo ea diam stet diam ipsum no sit, ipsum vero et et diam ipsum duo et no et, ipsum ipsum erat duo amet clita duo</p>
+                  <h4 className="card-title">choose your Contract </h4>
+                  <p className="card-text"></p>
                 </div>
                 <div className="card-footer bg-transparent py-4 px-5 text-center">
                   <div className="row border-bottom">
@@ -31,13 +31,13 @@ const PopularClasses = () => {
                     <div className="col-6 py-1 text-right border-right text-center"><strong>Class Time</strong></div>
                     <div className="col-6 py-1">08:00 - 10:00</div>
                   </div>
-                  <div className="row">
+                  {/* <div className="row">
                     <div className="col-6 py-1 text-right border-right text-center"><strong> Fee</strong></div>
                     <div className="col-6 py-1">$290 / Month</div>
-                  </div>
+                  </div> */}
                 </div>
                 <button className="btn px-3 mx-auto mb-4 btn-sm">
-                  <Link to="/ContractPage" className="btn px-3 mx-auto mb-4 btn-sm">For more details</Link>
+                  <Link to="/ContractType" className="btn px-3 mx-auto mb-4 btn-sm">For more details</Link>
                 </button>
               </div>
             </div>

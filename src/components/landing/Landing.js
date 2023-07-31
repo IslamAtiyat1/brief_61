@@ -10,16 +10,16 @@ import PopularClasses from './contract';
 
 function Landing() {
   return (
-   
-      <Fragment>
-        <Navbar/>
-        <Header/>
-        {/* {/* <EmployeePage/> */}
-        <EmployeePage/>
-<PopularClasses/>
-        <YouTubeVideos/>
-        <Footer />
-      </Fragment>
+
+    <Fragment>
+      <Navbar />
+      <Header />
+      {/* {/* <EmployeePage/> */}
+      <EmployeePage />
+      <PopularClasses />
+      <YouTubeVideos />
+      <Footer />
+    </Fragment>
   );
 }
 

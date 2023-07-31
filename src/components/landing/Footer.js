@@ -7,15 +7,17 @@ const Footer = () => {
         <div className="col-lg-3 col-md-6 mb-5">
           <a href="/" className="navbar-brand font-weight-bold text-primary m-0 mb-4 p-0" style={{ fontSize: '40px', lineHeight: '40px' }}>
             <i className="flaticon-043-teddy-bear"></i>
-            <span className="text-white">KidKinder</span>
+            <span className="text-white">ٍSchool</span>
+            <br/>
+            <span className="text-white"> Contracts</span>
           </a>
-          <p>Labore dolor amet ipsum ea, erat sit ipsum duo eos. Volup amet ea dolor et magna dolor, elitr rebum duo est sed diam elitr. Stet elitr stet diam duo eos rebum ipsum diam ipsum elitr.</p>
-          <div className="d-flex justify-content-start mt-4">
+          <p></p>
+          {/* <div className="d-flex justify-content-start mt-4">
             <a className="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style={{ width: '38px', height: '38px' }} href="#"><i className="fab fa-twitter"></i></a>
             <a className="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style={{ width: '38px', height: '38px' }} href="#"><i className="fab fa-facebook-f"></i></a>
             <a className="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style={{ width: '38px', height: '38px' }} href="#"><i className="fab fa-linkedin-in"></i></a>
             <a className="btn btn-outline-primary rounded-circle text-center mr-2 px-0" style={{ width: '38px', height: '38px' }} href="#"><i className="fab fa-instagram"></i></a>
-          </div>
+          </div> */}
         </div>
         <div className="col-lg-3 col-md-6 mb-5">
           <h3 className="text-primary mb-4">Get In Touch</h3>

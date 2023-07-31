@@ -1,15 +1,31 @@
+import { Outlet, Link, useNavigate } from "react-router-dom";
+
 const Header = () => {
-    return ( 
-      <header role="banner">
-        <h1>Admin Panel</h1>
-        <ul className="utilities">
-          <br />
-          <li className="users"><a href="#">My Account</a></li>
-          <li className="logout warn"><a href="">Log Out</a></li>
-        </ul>
-      </header>
-    );
+  const navigate = useNavigate();
+  function logout() {
+    sessionStorage.clear();
+    navigate("/");
+
   }
-   
-  export default Header;
-  
+  return (
+
+    <header role="banner">
+      <h1>Admin Panel</h1>
+      <ul className="utilities">
+        <br />
+
+        <li className="logout warn">
+          <Link className="nav-item nav-link">
+            {sessionStorage.getItem("username")}{" "}
+          </Link>
+          
+        </li>
+        <li><Link className="logout nav-item nav-link" to='/' onClick={logout}>
+            Logout
+          </Link></li>
+      </ul>
+    </header>
+  );
+}
+
+export default Header;

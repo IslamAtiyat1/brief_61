@@ -11,14 +11,11 @@ const EmployeePage = () => {
   const togglePopup = () => {
     setShowPopup(!showPopup);
   };
-
+ 
+  
   return (
     <>
-    {/* <button
-    onClick={togglePopup}
-    className="btn-modal">
-      Open
-    </button> */}
+  
  {showPopup && (
   <div className="modal">
     <div onClick={togglePopup} className="overlay"></div>
@@ -75,7 +72,7 @@ const EmployeePage = () => {
       
      
         <div>
-      <h1>Employee Page</h1>
+      {/* <h1>Employee Page</h1> */}
 
       <div className="container-fluid pt-5">
         <div className="container">

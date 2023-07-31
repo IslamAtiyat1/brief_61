@@ -11,7 +11,7 @@ export default function ListCompany() {
   const [currentPage, setCurrentPage] = useState(1);
   const [contractsPerPage] = useState(10);
   const [selectedStatus, setSelectedStatus] = useState("");
-  const tableRef = useRef(null);
+  const tableRef = useRef(0);
 
   useEffect(() => {
     getContracts();
@@ -30,6 +30,7 @@ export default function ListCompany() {
 
   function handleSearchChange(event) {
     setSearchQuery(event.target.value);
+    setCurrentPage(1);
   }
 
   function handlePageChange(pageNumber) {
@@ -40,36 +41,61 @@ export default function ListCompany() {
     setSelectedStatus(event.target.value);
   }
 
-  const updateStatus = async (id, status) => {
-    try {
-      const response = await axios.put(
-        `http://localhost/api_breef6/AdminCont/contract/${id}/updateStatus`,
-        { status }
-      );
-      setMessage(response.data.message);
-      console.log(response.data)
-      getContracts();
-      return response.data; // Return the response data
-    } catch (error) {
-      console.log(error);
-      throw error; // Throw the error to be caught by the caller
-    }
-  };
+ 
 
-  const filteredContracts = contracts.filter((contract) => {
-    if (selectedStatus === "") {
-      return true; // No specific status selected, include all contracts
-    } else {
-      return contract.status === selectedStatus;
-    }
-  });
-  const [message, setMessage] = useState("");
-  const indexOfLastContract = currentPage * contractsPerPage;
-  const indexOfFirstContract = indexOfLastContract - contractsPerPage;
-  const currentContracts = filteredContracts.slice(
-    indexOfFirstContract,
-    indexOfLastContract
-  );
+ // Function to update the contract status
+const updateStatus = (contractId, status) => {
+  // Make an API request to update the contract status
+  fetch(`http://localhost/api_breef6/AdminCont/contracts/${contractId}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ contract_id: contractId, status: status })
+  })
+    .then(response => {
+      if (response.ok) {
+        // Contract status updated successfully
+        console.log('Contract status updated successfully');
+        // You can update the UI or perform any other necessary actions
+      } else {
+        throw new Error('Failed to update contract status');
+      }
+    })
+    .catch(error => {
+      // Handle the error if needed
+      console.error('Failed to update contract status', error);
+    });
+};
+
+  
+const filteredContracts = contracts
+.filter((contract) => {
+  if (selectedStatus === "") {
+    return true;
+  } else {
+    return contract.status === selectedStatus;
+  }
+})
+.filter((contract) => {
+  if (searchQuery === "") {
+    return true;
+  } else {
+    const searchValue = searchQuery.toLowerCase();
+    return (
+      contract.contract_name.toLowerCase().includes(searchValue) ||
+      contract.company_name.toLowerCase().includes(searchValue) ||
+      contract.address.toLowerCase().includes(searchValue)
+    );
+  }
+});
+
+const indexOfLastContract = currentPage * contractsPerPage;
+const indexOfFirstContract = indexOfLastContract - contractsPerPage;
+const currentContracts = filteredContracts.slice(
+indexOfFirstContract,
+indexOfLastContract
+);
 
   return (
     <div>
@@ -78,15 +104,15 @@ export default function ListCompany() {
       <div
         className="container"
         style={{
-        //   marginRight: "4px",
-        //   paddingRight: "4px",
+          marginRight: "120px",
+          paddingRight: "4px",
           marginTop: "100px",
-        //   paddingLeft: "40px",
+          paddingLeft: "40px",
         }}
       >
         {/* <p  className="alert alert-info   "  > {message}</p>  */}
         <div className="mb-3">
-          <input
+        <input
             type="text"
             style={{ marginLeft: "20px" }}
             className="form-control"
@@ -142,31 +168,27 @@ export default function ListCompany() {
                 <td>{contract.company_phone}</td>
                 <td>{contract.liaison_officer_name}</td>
                 <td>
-                  {contract.status === "WAITING" ? (
-                    <>
-                      <button
-                        onClick={() =>
-                          updateStatus(contract.contract_id, "APPROVED")
-                        }
-                        disabled={contract.status !== "WAITING"}
-                        className="btn btn-primary"
-                      >
-                        Approved
-                      </button>
-                      <button
-                        onClick={() =>
-                          updateStatus(contract.contract_id, "REJECTED")
-                        }
-                        disabled={contract.status !== "WAITING"}
-                        className="btn btn-danger"
-                      >
-                        Rejected
-                      </button>
-                    </>
-                  ) : (
-                    <span>{contract.status}</span>
-                  )}
-                </td>
+  {contract.status === "WAITING" ? (
+    <>
+      <button
+        onClick={() => updateStatus(contract.contract_id, "APPROVED")}
+        disabled={contract.status !== "WAITING"}
+        className="btn btn-dark"
+      >
+        Approve
+      </button>
+      <button
+        onClick={() => updateStatus(contract.contract_id, "REJECTED")}
+        disabled={contract.status !== "WAITING"}
+        className="btn btn-gray"
+      >
+        Reject
+      </button>
+    </>
+  ) : (
+    <span>{contract.status}</span>
+  )}
+</td>
               </tr>
             ))}
           </tbody>
